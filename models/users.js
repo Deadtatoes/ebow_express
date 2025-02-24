@@ -8,6 +8,7 @@ const User = sequelize.define('users',{
     firstName: {
         type: DataTypes.STRING,
         allowNull: false,
+        primaryKey: true
     },
 
     // Last Name Column
@@ -20,12 +21,20 @@ const User = sequelize.define('users',{
     mobile: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        validate: {
+            isNumeric: true,
+        }
     },
 
     // Email Column
     email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true
+        }
     }
 })
 

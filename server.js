@@ -15,7 +15,6 @@ dotenv.config()
 
 
 // MIDDLEWARE
-// Middleware Config
 app.use(express.json())
 
 // // Middleware to validate API key
@@ -32,7 +31,7 @@ app.use('/users', userRoutes)
 
 
 // Sync DB
-sequelize.sync({ force: false })
+sequelize.sync({ })
   .then(() => {
     console.log('Database synced!');
   })
